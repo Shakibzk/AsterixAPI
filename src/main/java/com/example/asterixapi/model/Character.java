@@ -1,6 +1,11 @@
 package com.example.asterixapi.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "characters")
 public class Character {
+    @Id
     private String id;
     private String name;
     private int age;
@@ -13,15 +18,12 @@ public class Character {
         this.profession = profession;
     }
 
-    // Getter ها و Setter ها
-
     public String getId() { return id; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
-    public String getProfession() { return profession; }
-
     public void setId(String id) { this.id = id; }
+    public String getName() { return name; }
     public void setName(String name) { this.name = name; }
+    public int getAge() { return age; }
     public void setAge(int age) { this.age = age; }
+    public String getProfession() { return profession; }
     public void setProfession(String profession) { this.profession = profession; }
 }
